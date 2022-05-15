@@ -1,0 +1,14 @@
+{
+  "name": "project-1",
+  "version": "1.0.0",
+  "description": "In the project directory, you can run:",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass --watch styles/scss/style.scss styles/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.51.0"
+  }
+}
