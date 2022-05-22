@@ -1,505 +1,13 @@
-@charset "UTF-8";
-/*
-
-Imagens de 
-https://www.uifaces.co/
-https://unsplash.com/
-
-*/
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  /* font-size: 10px; */
-  /*PARA ACESSIBILIDADE - caso o utilizador queira alterar o default font-size do site*/
-  /* (10px / 16px) = 0.625 = 62.5% */
-  /* Percentage of user's browser font-size setting */
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "Rubik", sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #555;
-}
-
-/**************************/
-/* GENRAL REUSABLE COMPONENTS */
-/**************************/
-.container {
-  max-width: 120rem;
-  padding: 0 3.2rem;
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  column-gap: 6.4rem;
-  row-gap: 9.6rem;
-}
-
-.grid:not(:last-child) {
-  margin-bottom: 9.6rem;
-}
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid--4-cols {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid--center-v {
-  align-items: center;
-}
-
-.heading-primary,
-.heading-secondary,
-.heading-tertiary {
-  font-weight: 700;
-  color: #333;
-  letter-spacing: -0.5px;
-}
-
-.heading-primary {
-  font-size: 5.2rem;
-  line-height: 1.05;
-  margin-bottom: 3.2rem;
-}
-
-.heading-secondary {
-  font-size: 4.4rem;
-  line-height: 1.2;
-  margin-bottom: 9.6rem;
-}
-
-.heading-tertiary {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 3.2rem;
-}
-
-.subheading {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #cf711f;
-  text-transform: uppercase;
-  margin-bottom: 1.6rem;
-  letter-spacing: 0.75px;
-}
-
-.btn,
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-  /* Apenas necessário para o elemento Button no Form*/
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  /* Colocar a propriedade transition sempre no "estado inicial" do botão */
-  transition: all 0.3s;
-}
-
-.btn--full:link,
-.btn--full:visited {
-  background-color: #e67e22;
-  color: #fff;
-}
-
-.btn--full:hover,
-.btn--full:active {
-  background-color: #cf711f;
-}
-
-.btn--outline:link,
-.btn--outline:visited {
-  background-color: #fff;
-  color: #555;
-}
-
-.btn--outline:hover,
-.btn--outline:active {
-  background-color: #fdf2e9;
-  /* dar uma shadow s/ blur para dentro, para que o botão não aumente de tamanho - cria uma "border" inside */
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.btn--form {
-  background-color: #45260a;
-  color: #fdf2e9;
-  align-self: end;
-  padding: 1.2rem;
-}
-
-.btn--form:hover {
-  background-color: #fff;
-  color: #555;
-}
-
-.link:link,
-.link:visited {
-  display: inline-block;
-  color: #e67e22;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-  transition: all 0.3s;
-}
-
-.link:hover,
-.link:active {
-  color: #cf711f;
-  border-bottom: 1px solid transparent;
-}
-
-*:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
-}
-
-/* *************************************** */
-/* lista "works with any diet" e "planos Starter e Complete" */
-/* *************************************** */
-.list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.list-item {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  line-height: 1.2;
-}
-
-.list-icon {
-  width: 3rem;
-  height: 3rem;
-  color: #e67e22;
-}
-
-/***************************/
-/****** HELPER CLASSES *****/
-/***************************/
-.margin-right-sm {
-  margin-right: 1.6rem !important;
-}
-
-.margin-bottom-md {
-  margin-bottom: 4.8rem !important;
-}
-
-.center-text {
-  text-align: center;
-}
-
-strong {
-  font-weight: 500;
-}
-
-/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
-/**************************/
-/* BELOW 1344px (Smaller desktops) */
-/**************************/
-@media (max-width: 84em) {
-  .hero {
-    max-width: 120rem;
-  }
-
-  .heading-primary {
-    font-size: 4.4rem;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-/**************************/
-/* BELOW 1200px (Landscape Tablets) */
-/**************************/
-@media (max-width: 75em) {
-  html {
-    /* 9px / 16px  */
-    font-size: 56.25%;
-  }
-
-  .grid {
-    column-gap: 4.8rem;
-    row-gap: 6.4rem;
-  }
-
-  .heading-secondary {
-    font-size: 3.6rem;
-  }
-
-  .heading-tertiary {
-    font-size: 2.4rem;
-  }
-
-  .header {
-    padding: 0 3.2rem;
-  }
-
-  .main-nav-list {
-    gap: 3.2rem;
-  }
-
-  .hero {
-    gap: 4.8rem;
-  }
-
-  .testimonials-container {
-    padding: 9.6rem 3.2rem;
-  }
-}
-/**************************/
-/* BELOW 944px (Tablets) */
-/**************************/
-@media (max-width: 59em) {
-  html {
-    /* 8px / 16px = 0.5 = 50% */
-    font-size: 50%;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 0 8rem;
-    gap: 6.4rem;
-  }
-
-  .hero-text-box,
-.hero-img-box {
-    text-align: center;
-  }
-
-  .hero-img {
-    width: 60%;
-  }
-
-  .delivered-meals {
-    justify-content: center;
-    margin-top: 3.2rem;
-  }
-
-  .logos img {
-    height: 2.4rem;
-  }
-
-  .step-number {
-    font-size: 7.4rem;
-  }
-
-  .meal-content {
-    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
-  }
-
-  .section-testimonials {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .cta {
-    /* 3/5 = 60% + 2/5 = 40% */
-    grid-template-columns: 3fr 2fr;
-  }
-
-  .cta-form {
-    grid-template-columns: 1fr;
-  }
-
-  .btn--form {
-    margin-top: 1.2rem;
-  }
-
-  /* MOBILE NAVIGATION */
-  .btn-mobile-nav {
-    display: block;
-  }
-
-  .main-nav {
-    background-color: rgba(255, 255, 255, 0.97);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    transform: translateX(100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease-in;
-    /* Hide navigation */
-    /* Allows NO transitions at all */
-    /* display: none; */
-    /* 1) Hide it visually */
-    opacity: 0;
-    /* 2) Make it unaccessible to mouse and keyboard */
-    pointer-events: none;
-    /* 3) Hide it from screen readers */
-    visibility: hidden;
-  }
-
-  .nav-open .main-nav {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: translateX(0);
-  }
-
-  .nav-open .icon-mobile-nav[name=close-outline] {
-    display: block;
-  }
-
-  .nav-open .icon-mobile-nav[name=menu-outline] {
-    display: none;
-  }
-
-  .main-nav-list {
-    flex-direction: column;
-    gap: 4.8rem;
-  }
-
-  .main-nav-link:link,
-.main-nav-link:visited {
-    font-size: 3rem;
-  }
-}
-/**************************/
-/* BELOW 704px (Smaller tablets) */
-/**************************/
-@media (max-width: 44em) {
-  .grid--3-cols,
-.grid--4-cols {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .diets {
-    grid-column: 1/-1;
-    justify-self: center;
-  }
-
-  .heading-secondary {
-    margin-bottom: 4.8rem;
-  }
-
-  .pricing-plan {
-    width: 100%;
-  }
-
-  .grid--footer {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .logo-col,
-.address-col {
-    grid-column: span 3;
-  }
-
-  .nav-col {
-    grid-row: 1;
-    grid-column: span 2;
-    margin-bottom: 3.2rem;
-  }
-}
-/**************************/
-/* BELOW 544px (Phones) */
-/**************************/
-@media (max-width: 34em) {
-  .grid {
-    row-gap: 4.8rem;
-  }
-
-  .grid--2-cols,
-.grid--3-cols,
-.grid--4-cols {
-    grid-template-columns: 1fr;
-  }
-
-  .btn,
-.btn:link,
-.btn:visited {
-    padding: 2.4rem 1.6rem;
-  }
-
-  .section-hero {
-    padding: 2.4rem 0 6.4rem 0;
-  }
-
-  .hero {
-    padding: 0 3.2rem;
-  }
-
-  .hero-img {
-    width: 80%;
-  }
-
-  .logos img {
-    height: 1.2rem;
-  }
-
-  .step-img-box:nth-child(2) {
-    grid-row: 1;
-  }
-
-  .step-img-box:nth-child(6) {
-    grid-row: 5;
-  }
-
-  .step-img-box {
-    transform: translateY(2.4rem);
-  }
-
-  .testimonials {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
-  }
-
-  .cta {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-text-box {
-    padding: 3.2rem;
-  }
-
-  .cta-img-box {
-    height: 32rem;
-    grid-row: 1;
-  }
-}
 /**************************/
 /* HEADER */
 /**************************/
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
+
   /* atribuir Height ao Header para ele ser sticky */
   height: 9.6rem;
   padding: 0 4.8rem;
@@ -509,6 +17,7 @@ strong {
 /**************************/
 /* NAVIGATION */
 /**************************/
+
 .main-nav-list {
   list-style: none;
   display: flex;
@@ -549,6 +58,7 @@ strong {
   border: none;
   background: none;
   cursor: pointer;
+
   display: none;
 }
 
@@ -558,13 +68,14 @@ strong {
   color: #333;
 }
 
-.icon-mobile-nav[name=close-outline] {
+.icon-mobile-nav[name="close-outline"] {
   display: none;
 }
 
 /**************************/
 /* HERO SECTION */
 /**************************/
+
 .section-hero {
   background-color: #fdf2e9;
   padding: 4.8rem 0 9.6rem 0;
@@ -626,6 +137,7 @@ strong {
 /**************************/
 /* FEATURED IN SECTION */
 /**************************/
+
 .section-featured {
   padding: 4.8rem 0 3.2rem 0;
 }
@@ -654,6 +166,7 @@ strong {
 /**************************/
 /* HOW IT WORKS SECTION */
 /**************************/
+
 .section-how {
   padding: 9.6rem 0;
 }
@@ -672,6 +185,7 @@ strong {
 
 .step-img-box {
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -711,6 +225,7 @@ strong {
 /**************************/
 /* MEALS SECTION */
 /**************************/
+
 .section-meals {
   padding: 9.6rem 0;
 }
@@ -751,11 +266,9 @@ strong {
 .tag--vegetarian {
   background-color: #51cf66;
 }
-
 .tag--vegan {
   background-color: #94d82d;
 }
-
 .tag--paleo {
   background-color: #ffd43b;
 }
@@ -797,9 +310,9 @@ strong {
 }
 
 /**************************/
-/* TESTIMONIALS SECTION */
-/*DONE*/
+/* TESTIMONIALS SECTION */ /*DONE*/
 /**************************/
+
 .section-testimonials {
   background-color: #fdf2e9;
   display: grid;
@@ -858,15 +371,16 @@ strong {
 }
 
 /**************************/
-/* MEALS PRICING SECTION */
-/*DONE*/
+/* MEALS PRICING SECTION */ /*DONE*/
 /**************************/
+
 .section-pricing {
   padding: 9.6rem 0;
 }
 
 .pricing-plan {
   border-radius: 11px;
+
   width: 75%;
 }
 
@@ -880,8 +394,7 @@ strong {
   background-color: #fdf2e9;
   padding: 4.8rem;
   position: relative;
-  overflow: hidden;
-  /*esconde os cantos da faixa amarela "Best Value"*/
+  overflow: hidden; /*esconde os cantos da faixa amarela "Best Value"*/
 }
 
 .pricing-plan--complete::after {
@@ -889,6 +402,7 @@ strong {
   position: absolute;
   top: 6%;
   right: -18%;
+
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
@@ -967,6 +481,7 @@ strong {
 /**************************/
 /* CTA SECTION */
 /**************************/
+
 .section-cta {
   padding: 4.8rem 0 12.8rem 0;
 }
@@ -974,11 +489,12 @@ strong {
 .cta {
   display: grid;
   grid-template-columns: 2fr 1fr;
+
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
   border-radius: 11px;
+
   background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
-  overflow: hidden;
-  /*esconde os cantos da imagem*/
+  overflow: hidden; /*esconde os cantos da imagem*/
 }
 
 .cta-text-box {
@@ -998,7 +514,12 @@ strong {
 }
 
 .cta-img-box {
-  background-image: linear-gradient(to right bottom, rgba(235, 151, 78, 0.35), rgba(230, 125, 34, 0.35)), url("../../img/eating.jpg");
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url("../../img/eating.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1040,9 +561,9 @@ strong {
 }
 
 /**************************/
-/* FOOTER */
-/*DONE*/
+/* FOOTER */ /*DONE*/
 /**************************/
+
 .footer {
   padding: 12.8rem 0;
   border-top: 1px solid #eee;
@@ -1115,5 +636,3 @@ strong {
 .footer-link:active {
   color: #555;
 }
-
-/*# sourceMappingURL=style.css.map */
