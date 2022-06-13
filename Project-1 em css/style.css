@@ -8,11 +8,9 @@
   align-items: center;
   background-color: #fdf2e9;
 
-  /* atribuir Height ao Header para ele ser sticky?? Posso dar ao header a position:relative (por causa da main-nav) E TAMBÉM dar position:Sticky?? */
+  /* atribuir Height ao Header para ele ser sticky */
   height: 9.6rem;
   padding: 0 4.8rem;
-
-  /*media-queries *** BELOW 944px (Tablets) MOBILE NAVIGATION *** main-nav {position: absolute;} ****/
   position: relative;
 }
 
